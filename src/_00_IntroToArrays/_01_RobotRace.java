@@ -10,9 +10,11 @@ public class _01_RobotRace {
 	//1. make a main method
 	
 		//2. create an array of 5 robots.
-
+String[] robots = {"kevin" , "timmy", "meg", "jim", "willow" };
 		//3. use a for loop to initialize the robots.
-
+for(int i = 0; i < 5; i++) {
+	
+}
 			//4. make each robot start at the bottom of the screen, side by side, facing up
 	
 		//5. use another for loop to iterate through the array and make each robot move 
@@ -27,4 +29,5 @@ public class _01_RobotRace {
 	    //9. make the robots race around a circular track.
 
 	
+}
 }
