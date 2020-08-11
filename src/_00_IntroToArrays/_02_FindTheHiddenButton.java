@@ -54,21 +54,21 @@ JButton[] JB;
 		//12. Give the user the instructions for the game.
 		JOptionPane.showMessageDialog(null, "Find the hidden button by pressing on random buttons.");
 		//13. initialize the hiddenButton variable to a random number less than the int created in step 3
-	int hiddenButton = random.nextInt(num);
+	this.hiddenButton = random.nextInt(num);
 		//14. Set the text of the JButton located at hiddenButton to read "ME"
-JB.setText("ME");
+hiddenButton.setText("ME");
 		//15. Use Thread.sleep(100); to pause the program.
 		Thread.sleep(100);
 		//16. Set the text of the JButton located at hiddenButton to be blank.
-	JB.setText("");	
-	}
+		hiddenButton.setText("");
+		}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		JButton buttonClicked = (JButton)e.getSource();
 		
 		//17. if the hiddenButton is clicked, tell the user that they win.
-if(e.getSource() == hiddenButton) {
+if(JB.buttonClicked) {
 	JOptionPane.showMessageDialog(null, "You Win!!!");
 }
 		//18. else tell them to try again
