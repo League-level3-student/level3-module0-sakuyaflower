@@ -35,6 +35,7 @@ JButton[] JB;
 		
 		//4. Initialize the array of JButtons to be the size of the int created in step 3
 		int num = Integer.parseInt( answer );
+		JB = new JButton[num];
 		//5. Make a for loop to iterate through the JButton array
 			//6. initialize each JButton in the array
 			//7. add the ActionListener to each JButton
@@ -42,8 +43,8 @@ JButton[] JB;
 		for(int i = 0; i < JB.length; i++) {
 			JButton b = new JButton();
 			b.addActionListener( this );
-			b.add(panel);
-	
+			panel.add(b);
+			JB[i] = b;
 		}
 		//9 add the panel to the window
 		window.add(panel);
@@ -56,11 +57,16 @@ JButton[] JB;
 		//13. initialize the hiddenButton variable to a random number less than the int created in step 3
 	this.hiddenButton = random.nextInt(num);
 		//14. Set the text of the JButton located at hiddenButton to read "ME"
-hiddenButton.setText("ME");
+JB[hiddenButton].setText("ME");
 		//15. Use Thread.sleep(100); to pause the program.
-		Thread.sleep(100);
+		try {
+			Thread.sleep(100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		//16. Set the text of the JButton located at hiddenButton to be blank.
-		hiddenButton.setText("");
+		JB[hiddenButton].setText("");
 		}
 
 	@Override
@@ -68,7 +74,7 @@ hiddenButton.setText("ME");
 		JButton buttonClicked = (JButton)e.getSource();
 		
 		//17. if the hiddenButton is clicked, tell the user that they win.
-if(JB.buttonClicked) {
+if(buttonClicked == JB[hiddenButton]) {
 	JOptionPane.showMessageDialog(null, "You Win!!!");
 }
 		//18. else tell them to try again
